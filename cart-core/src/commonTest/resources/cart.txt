@@ -1,0 +1,7 @@
+CartInvoice
+    - wali maharage x 2     2000
+    - maji 500      x 2     1000
+    - subtotal              3000
+    - discount              200
+    - delivery              500
+    - total
