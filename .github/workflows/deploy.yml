@@ -29,9 +29,9 @@ jobs:
       - name: Making gradlew executable
         run: chmod +x ./gradlew
         working-directory: .
-      - name: Publishing color to sontaype nexus staging
+      - name: Publishing cart to sontaype nexus staging
         run: ./gradlew publish
         working-directory: .
       - name: Closing and Releasing repositories
-        run: ./gradlew :color-core:closeAndReleaseRepository
+        run: ./gradlew :cart-core:closeAndReleaseRepository
         working-directory: .
