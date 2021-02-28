@@ -8,4 +8,8 @@ object vers {
         val test = "1.1.10"
         val expect = "0.0.10"
     }
+
+    object kotlinx {
+        val serialization = "1.0.1"
+    }
 }
