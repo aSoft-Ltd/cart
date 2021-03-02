@@ -6,11 +6,11 @@ A platform agnostic representation of carts
 ## Setup
 ```kotlin
 dependencies {
-    implementation("tz.co.asoft:cart-core:0.0.10") // please use the latest version possible
+    implementation("tz.co.asoft:cart-core:0.0.20") // please use the latest version possible
 }
 ```
 
-[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/cart-core/0.0.10?style=flat
+[badge-maven]: https://img.shields.io/maven-central/v/tz.co.asoft/cart-core/0.0.20?style=flat
 [badge-mpp]: https://img.shields.io/badge/kotlin-multiplatform-blue?style=flat
 [badge-android]: http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat
 [badge-js]: http://img.shields.io/badge/platform-js-yellow.svg?style=flat
