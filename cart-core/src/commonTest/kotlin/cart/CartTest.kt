@@ -9,7 +9,8 @@ class CartTest {
     fun should_have_a_sub_total_of_all_the_items() {
         val cart1 = Cart(
             uid = "cart-1",
-            CartItem(
+            currency = "usd",
+            Item(
                 uid = "item-1",
                 name = "R.B",
                 quantity = 1,
@@ -17,7 +18,7 @@ class CartTest {
                 images = listOf(),
                 discount = 0
             ),
-            CartItem(
+            Item(
                 uid = "item-2",
                 name = "Soda",
                 quantity = 1,
@@ -25,7 +26,7 @@ class CartTest {
                 images = listOf(),
                 discount = 0
             ),
-            CartItem(
+            Item(
                 uid = "item-3",
                 name = "Banana",
                 quantity = 2,
@@ -41,7 +42,8 @@ class CartTest {
     fun should_consider_item_discount() {
         val cart2 = Cart(
             uid = "cart-2",
-            CartItem(
+            currency = "usd",
+            Item(
                 uid = "item-1",
                 name = "R.B",
                 quantity = 2,
@@ -49,7 +51,7 @@ class CartTest {
                 images = listOf(),
                 discount = 200
             ),
-            CartItem(
+            Item(
                 uid = "item-2",
                 name = "Soda",
                 quantity = 1,
@@ -57,7 +59,7 @@ class CartTest {
                 images = listOf(),
                 discount = 0
             ),
-            CartItem(
+            Item(
                 uid = "item-3",
                 name = "Banana",
                 quantity = 2,
@@ -71,8 +73,11 @@ class CartTest {
 
     @Test
     fun should_add_items_to_cart_properly() {
-        val cart = Cart(uid = "4545")
-        val item1 = CartItem(
+        val cart = Cart(
+            uid = "4545",
+            currency = "usd"
+        )
+        val item1 = Item(
             uid = "item-1",
             name = "Test Item",
             price = 1000,
@@ -112,7 +117,7 @@ class CartTest {
 
     @Test
     fun should_remove_items_from_the_cart() {
-        val item1 = CartItem(
+        val item1 = Item(
             uid = "item-1",
             name = "Test Item",
             price = 1000,
@@ -122,6 +127,7 @@ class CartTest {
         )
         val cart = Cart(
             uid = "cart-333",
+            currency = "usd",
             item1
         )
         expect(cart.items.size).toBe(1)
