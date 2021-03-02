@@ -5,15 +5,16 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Cart(
     val uid: String,
-    val items: MutableList<CartItem>
+    val currency: String,
+    val items: MutableList<Item>
 ) {
-    constructor(uid: String, vararg items: CartItem) : this(uid, items.toMutableList())
+    constructor(uid: String, currency: String, vararg items: Item) : this(uid, currency, items.toMutableList())
 
     /**
      * Adds the [item] to the [Cart]
-     * @return [CartItem] representation found in the cart
+     * @return [Item] representation found in the cart
      */
-    fun add(item: CartItem): CartItem {
+    fun add(item: Item): Item {
         val it = items.find { it.uid == item.uid }
         return if (it == null) {
             val i = item.copy()
@@ -28,10 +29,10 @@ data class Cart(
     }
 
     /**
-     * Removes the [item] or some [CartItem.quantity] from the [Cart] if it was currently present in the cart
-     * @return [CartItem] representation found in the cart or null if the cart is left without the item
+     * Removes the [item] or some [Item.quantity] from the [Cart] if it was currently present in the cart
+     * @return [Item] representation found in the cart or null if the cart is left without the item
      */
-    fun remove(item: CartItem): CartItem? {
+    fun remove(item: Item): Item? {
         val i = items.find { it.uid == item.uid } ?: return null
         items.remove(i)
         if (i.quantity >= item.quantity) {
@@ -44,10 +45,10 @@ data class Cart(
 
     /**
      * Totally [eliminate] the item with id [itemId] from the cart
-     * @return [CartItem] that was eliminated from the [Cart] or null if item with
+     * @return [Item] that was eliminated from the [Cart] or null if item with
      * [itemId] was not found in the cart
      */
-    fun eliminate(itemId: String): CartItem? {
+    fun eliminate(itemId: String): Item? {
         val item = items.find { it.uid == itemId } ?: return null
         items.remove(item)
         return item

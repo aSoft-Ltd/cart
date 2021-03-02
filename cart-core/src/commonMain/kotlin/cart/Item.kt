@@ -3,7 +3,7 @@ package cart
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class CartItem(
+data class Item(
     val uid: String,
     val name: String,
     val price: Long,

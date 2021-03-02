@@ -4,8 +4,8 @@ import tz.co.asoft.expect
 import tz.co.asoft.toBe
 import kotlin.test.Test
 
-class CartItemTest {
-    val item = CartItem(
+class ItemTest {
+    val item = Item(
         uid="item-1",
         name = "Wali Maharage",
         quantity = 2,
